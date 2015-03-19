@@ -62,8 +62,9 @@ public class MyActivity extends Activity implements View.OnClickListener{
                 //An intent is an abstract description of an operation to be performed. It can be used with startActivity to launch an Activity, broadcastIntent to send it to any interested BroadcastReceiver components, and startService(Intent) or bindService(Intent, ServiceConnection, int) to communicate with a background Service.
                 //An Intent provides a facility for performing late runtime binding between the code in different applications. Its most significant use is in the launching of activities, where it can be thought of as the glue between activities. It is basically a passive data structure holding an abstract description of an action to be performed.
                 Intent intent;
+                Intent defaultResult = new Intent();
                 //Create a new PendingIntent object which you can hand to others for them to use to send result data back to your onActivityResult(int, int, Intent) callback.
-                pi = createPendingResult(TASK1_CODE, null, 0);
+                    pi = createPendingResult(TASK1_CODE, defaultResult, 0);
                 //Create an intent for a specific component.
                 //Add extended data to the intent.
                 intent = new Intent(this, ServiceSample. class ).putExtra(PARAM_TIME, originalValue)
